@@ -1,7 +1,10 @@
-import base from './webpack.config.base'
-
+const baseConfig = require('./webpack.config.base');
 const merge = require('webpack-merge');
 
-module.exports = {
-  merge([base]);
-}
+module.exports = merge(baseConfig, {    
+    devServer: {
+       // stats: 'errors-only',
+        contentBase: "./dist",
+        port: 9000
+    }
+  });

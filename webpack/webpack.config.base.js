@@ -1,13 +1,13 @@
 var path = require('path');
 
 const PATH = {
-  src: path.resolve(__dirname, 'src'),
-  dist: path.resolve(__dirname, 'dist')
+  src: path.resolve(__dirname, '../src'),
+  dist: path.resolve(__dirname, '../dist')
 }
 
-export default {
+module.exports = {
   entry: {
-    'bundle' : path.resolve(PATH.src, 'index.js')
+    'bundle': path.resolve(PATH.src, 'index.js'),
   },
   output: {
     path: PATH.dist,
