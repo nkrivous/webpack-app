@@ -5,10 +5,13 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1",
+    "webpack-merge": "^4.1.0"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
+    "start": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config.dev.js"
   },
   "author": "",
   "license": "ISC"
