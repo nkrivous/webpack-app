@@ -1,3 +1,1 @@
-export default ()=>{
-    return 'text from function1';
-}
+export default () => 'text from function1';
