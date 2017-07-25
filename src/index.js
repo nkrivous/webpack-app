@@ -1,3 +1,4 @@
-import func from './function1';
+import User from './user';
 
-console.log(func());
+const user = new User('nkrivous');
+console.log(user.sayHi());
