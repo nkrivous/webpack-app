@@ -3,10 +3,10 @@ function User(name) {
 }
 
 User.prototype.sayHi = function sayHi() {
-  if (NODE_ENV === 'production') {
-    return this.name;
+  if (NODE_ENV === 'development') {
+    console.log('test name');
   }
-  return 'test name';
+  return this.name;
 };
 
 export default User;
