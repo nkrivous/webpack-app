@@ -11,6 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
     filename: 'js/[name].js',
   },
   plugins: [
@@ -19,6 +20,7 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
+      chunks: ['about', 'index'],
     }),
   ],
 };
