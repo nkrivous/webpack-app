@@ -1,10 +1,12 @@
 {
     "extends": "airbnb-base",
     "globals": {
-        "NODE_ENV":true
+        "NODE_ENV":false,
+        "externalGlobal":false
     },
     "rules": {
         "no-console":"off",
-        "no-debugger":"off"
+        "no-debugger":"off",
+        "func-names":"off"
     }
 }
