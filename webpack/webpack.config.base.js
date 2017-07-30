@@ -8,10 +8,10 @@ module.exports = {
   entry: {
     index: './index.js',
     about: './about.js',
-    common: './common.js',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
     filename: 'js/[name].js',
   },
   plugins: [
