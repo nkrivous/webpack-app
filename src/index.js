@@ -1,4 +1,4 @@
-import User from './user';
+import User from '../external/user';
 
 
 const user = new User('nkrivous');
