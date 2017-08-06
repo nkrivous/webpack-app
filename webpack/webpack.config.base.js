@@ -7,7 +7,8 @@ module.exports = {
   context: path.resolve(__dirname, '../src'),
   entry: {
     index: './index.js',
-    about: './about.ts'
+    about: './about.ts',
+    'webpack-page': './webpack-page/webpack-page'
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -26,6 +27,18 @@ module.exports = {
         test: /\.ts$/,
         use: {
           loader: 'awesome-typescript-loader'
+        }
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader'
+        }
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'file-loader'
         }
       }
     ]
