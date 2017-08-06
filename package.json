@@ -18,7 +18,7 @@
     "webpack-merge": "^4.1.0"
   },
   "scripts": {
-    "serve": "static dist",
+    "serve": "static",
     "vendor": "webpack --config webpack/webpack.config.vendor.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "start": "webpack-dev-server",

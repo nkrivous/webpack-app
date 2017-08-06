@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    publicPath: '/dist/',
     filename: 'js/[name].js'
   },
   resolve: {
@@ -38,7 +38,10 @@ module.exports = {
       {
         test: /\.svg$/,
         use: {
-          loader: 'file-loader'
+          loader: 'file-loader',
+          query: {
+            name: 'assets/[name].[ext]'
+          }
         }
       }
     ]
