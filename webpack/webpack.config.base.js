@@ -5,26 +5,44 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
   context: path.resolve(__dirname, '../src'),
+  entry: {
+    index: './index.js',
+    about: './about.ts',
+    'webpack-page': './webpack-page/webpack-page'
+  },
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/dist/',
+    filename: 'js/[name].js'
+  },
   resolve: {
     extensions: ['.js', '.ts'],
     alias: {
       user: path.resolve(__dirname, '../external/user.js')
     }
   },
-  entry: {
-    index: './index.js',
-    about: './about.ts'
-  },
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
-    filename: 'js/[name].js'
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        use: {
+          loader: 'awesome-typescript-loader'
+        }
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader'
+        }
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'file-loader',
+          query: {
+            name: 'assets/[name].[ext]'
+          }
+        }
       }
     ]
   },
